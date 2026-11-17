@@ -156,3 +156,9 @@
 /lib/modules/drm_display_helper.ko:
 /lib/modules/uload_ind.ko: /lib/modules/load_track.ko
 /lib/modules/mtk-mmdvfs-ftrace.ko:
+/lib/modules/ft8057p_spi.ko:
+/lib/modules/lct_tp.ko: /lib/modules/ft8057p_spi.ko
+/lib/modules/xiaomi_touch.ko: /lib/modules/ft8057p_spi.ko
+/lib/modules/nt36528_spi.ko:
+/lib/modules/icnl9916_spi.ko:
+/lib/modules/omnivision_tcm.ko:

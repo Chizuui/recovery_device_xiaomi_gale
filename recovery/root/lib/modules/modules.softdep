@@ -1,5 +1,5 @@
 # Soft dependencies extracted from modules themselves.
-softdep xm_smart_chg lc charger
+softdep xm_smart_chg pre: lc_charger_sysfs
 softdep clkbuf pre: mt6685-core
 softdep clkbuf pre: mt6397
 softdep mtk_dvfsrc post: mtk-dvfsrc-regulator

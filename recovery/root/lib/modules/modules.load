@@ -138,3 +138,9 @@ sec-rng.ko
 mi_memory.ko
 perf_helper.ko
 xm_smart_chg.ko
+ft8057p_spi.ko
+lct_tp.ko
+xiaomi_touch.ko
+nt36528_spi.ko
+icnl9916_spi.ko
+omnivision_tcm.ko
