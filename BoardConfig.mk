@@ -155,6 +155,9 @@ TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
 TW_HAS_NO_RECOVERY_PARTITION := true
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/root/system/etc/recovery.fstab
 
+# Device sepolicy
+BOARD_SEPOLICY_DIRS += device/xiaomi/gale/sepolicy
+
 # Device-specific system props
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
 

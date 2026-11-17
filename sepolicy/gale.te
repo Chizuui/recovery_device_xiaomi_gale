@@ -1,0 +1,24 @@
+# Xiaomi gale (Redmi 13C / Poco C65) - OrangeFox recovery extras
+# Recovery runs with these domains in permissive mode (bootable/recovery/sepolicy/twrp.te),
+# these rules just make the policy match the behaviour that is already happening.
+
+# Device-mapper block device size/probe ioctls (BLKGETSIZE64 etc.) for logical partitions
+allow recovery dm_device:blk_file ioctl;
+
+# Recovery writes its own files/logs into the ramdisk rootfs
+allow recovery rootfs:file { write setattr };
+allow recovery rootfs:dir write;
+
+# Screenshots/logs/settings on internal storage
+allow recovery media_rw_data_file:dir { search getattr write };
+allow recovery media_rw_data_file:file write;
+
+# Brightness / panel sysfs nodes
+allow recovery sysfs:file write;
+
+# dmesg access from the recovery terminal
+allow recovery kmsg_device:chr_file write;
+
+# init writes the BCB (misc) and kernel parameters for reboot/fastboot
+allow init block_device:blk_file write;
+allow init sysfs:file write;
