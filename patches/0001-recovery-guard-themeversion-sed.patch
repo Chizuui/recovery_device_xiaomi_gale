@@ -1,0 +1,17 @@
+diff --git a/Android.mk b/Android.mk
+index ead7dee39..6a9ef0e9d 100755
+--- a/Android.mk
++++ b/Android.mk
+@@ -653,8 +653,10 @@ LOCAL_REQUIRED_MODULES += $(TWRP_REQUIRED_MODULES)
+ #TW_THEME_VERSION := $(shell grep TW_THEME_VERSION bootable/recovery/variables.h | cut -d ' ' -f 3)
+ 
+ LOCAL_POST_INSTALL_CMD += \
+-    sed -i "s/{themeversion}/$(TW_THEME_VERSION)/" $(TARGET_RECOVERY_ROOT_OUT)/twres/splash.xml; \
+-    sed -i "s/{themeversion}/$(TW_THEME_VERSION)/" $(TARGET_RECOVERY_ROOT_OUT)/twres/ui.xml;
++    if [ -f $(TARGET_RECOVERY_ROOT_OUT)/twres/splash.xml -a -f $(TARGET_RECOVERY_ROOT_OUT)/twres/ui.xml ]; then \
++        sed -i "s/{themeversion}/$(TW_THEME_VERSION)/" $(TARGET_RECOVERY_ROOT_OUT)/twres/splash.xml; \
++        sed -i "s/{themeversion}/$(TW_THEME_VERSION)/" $(TARGET_RECOVERY_ROOT_OUT)/twres/ui.xml; \
++    fi;
+ 
+ include $(BUILD_EXECUTABLE)
+ 
